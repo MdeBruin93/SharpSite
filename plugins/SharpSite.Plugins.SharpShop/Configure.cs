@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SharpSite.Abstractions.Base;
-using SharpSite.Plugin.SharpShop.Repositories;
-using SharpSite.Plugin.SharpShop.Services;
+using SharpSite.Plugins.SharpShop.Repositories;
+using SharpSite.Plugins.SharpShop.Services;
 
-namespace SharpSite.Plugin.SharpShop;
+namespace SharpSite.Plugins.SharpShop;
 
 /// <summary>
 /// Registers SharpShop services when the host opts into plugin startup integration.

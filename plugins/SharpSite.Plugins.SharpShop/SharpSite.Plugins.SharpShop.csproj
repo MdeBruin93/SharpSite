@@ -3,8 +3,8 @@
   <PropertyGroup>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>SharpSite.Plugin.SharpShop</AssemblyName>
-    <RootNamespace>SharpSite.Plugin.SharpShop</RootNamespace>
+    <AssemblyName>SharpSite.Plugins.SharpShop</AssemblyName>
+    <RootNamespace>SharpSite.Plugins.SharpShop</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

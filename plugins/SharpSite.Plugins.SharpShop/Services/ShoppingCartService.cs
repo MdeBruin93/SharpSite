@@ -1,7 +1,7 @@
-using SharpSite.Plugin.SharpShop.Models;
-using SharpSite.Plugin.SharpShop.Repositories;
+using SharpSite.Plugins.SharpShop.Models;
+using SharpSite.Plugins.SharpShop.Repositories;
 
-namespace SharpSite.Plugin.SharpShop.Services;
+namespace SharpSite.Plugins.SharpShop.Services;
 
 public sealed class ShoppingCartService
 {

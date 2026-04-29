@@ -1,7 +1,7 @@
 using Moq;
-using SharpSite.Plugin.SharpShop.Models;
-using SharpSite.Plugin.SharpShop.Repositories;
-using SharpSite.Plugin.SharpShop.Services;
+using SharpSite.Plugins.SharpShop.Models;
+using SharpSite.Plugins.SharpShop.Repositories;
+using SharpSite.Plugins.SharpShop.Services;
 
 namespace SharpSite.Tests.Plugins.SharpShop;
 

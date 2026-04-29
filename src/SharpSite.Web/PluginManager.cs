@@ -271,8 +271,8 @@ public class PluginManager(
 			{
 				var pluginAttribute = (RegisterPluginAttribute)pluginAttributes[0]!;
 
-				var knownInterface = pluginAttribute.RegisterType == PluginRegisterType.DataStorage_EfContext 
-					? type 
+				var knownInterface = pluginAttribute.RegisterType == PluginRegisterType.DataStorage_EfContext
+					? type
 					: PluginTypeMapping.GetInterfaceType(pluginAttribute.RegisterType);
 
 				var serviceDescriptor = new ServiceDescriptor(knownInterface!, type, pluginAttribute.Scope switch

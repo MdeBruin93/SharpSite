@@ -74,7 +74,8 @@
         <div class="vr p-0 mx-2"></div>
 
         <!-- Right panel with configuration -->
-        <div class="col-lg-6 p-4">            @if (DatabaseConfig is not null)
+        <div class="col-lg-6 p-4">           
+            @if (DatabaseConfig is not null)
             {
                 <DatabaseConfiguration 
                     DatabaseConfig="DatabaseConfig" 
@@ -133,12 +134,12 @@
 
 		// Create the security database if it does not exist.
 		var securityServices = new RegisterPostgresSecurityServices();
-		// securityServices.CreateDatabaseIfNotExists(securityConnectionString);
-		// await securityServices.UpdateDatabaseSchemaAsync(securityConnectionString);
+		// securityServices.CreateDatabaseIfNotExists(AppState.SecurityConnectionString);
+  //       await securityServices.UpdateDatabaseSchemaAsync(AppState.SecurityConnectionString);
 
 		// Restart the application to apply the changes.
 
-		// NavManager.NavigateTo("/", true);
+		NavManager.NavigateTo("/", true);
 
 	}
 

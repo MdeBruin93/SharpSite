@@ -1,7 +1,7 @@
 using System.Collections.Concurrent;
-using SharpSite.Plugin.SharpShop.Models;
+using SharpSite.Plugins.SharpShop.Models;
 
-namespace SharpSite.Plugin.SharpShop.Repositories;
+namespace SharpSite.Plugins.SharpShop.Repositories;
 
 public sealed class InMemoryOrderRepository : IOrderRepository
 {

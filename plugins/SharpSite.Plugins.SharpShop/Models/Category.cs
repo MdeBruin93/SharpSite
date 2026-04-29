@@ -1,4 +1,4 @@
-namespace SharpSite.Plugin.SharpShop.Models;
+namespace SharpSite.Plugins.SharpShop.Models;
 
 public sealed record Category(
     Guid Id,

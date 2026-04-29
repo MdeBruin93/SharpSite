@@ -1,6 +1,6 @@
-namespace SharpSite.Plugin.SharpShop.Models;
+namespace SharpSite.Plugins.SharpShop.Models;
 
-public sealed record OrderItem(
+public sealed record CartItem(
     Guid ProductId,
     string ProductName,
     int Quantity,

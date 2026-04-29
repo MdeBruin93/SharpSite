@@ -19,6 +19,7 @@
     <ProjectReference Include="..\SharpSite.ServiceDefaults\SharpSite.ServiceDefaults.csproj" />
     <ProjectReference Include="..\SharpSite.Data.Postgres\SharpSite.Data.Postgres.csproj" />
     <ProjectReference Include="..\SharpSite.Plugins\SharpSite.Plugins.csproj" />
+    <ProjectReference Include="..\..\plugins\SharpSite.Plugins.SharpShop\SharpSite.Plugins.SharpShop.csproj" />
   </ItemGroup>
 
   <ItemGroup>

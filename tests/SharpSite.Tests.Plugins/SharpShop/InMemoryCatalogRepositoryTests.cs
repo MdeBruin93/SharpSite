@@ -1,5 +1,5 @@
-using SharpSite.Plugin.SharpShop.Models;
-using SharpSite.Plugin.SharpShop.Repositories;
+using SharpSite.Plugins.SharpShop.Models;
+using SharpSite.Plugins.SharpShop.Repositories;
 
 namespace SharpSite.Tests.Plugins.SharpShop;
 

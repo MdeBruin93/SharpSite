@@ -43,6 +43,7 @@
     <Project Path="plugins/Sample.FirstThemePlugin/Sample.FirstThemePlugin.csproj" />
     <Project Path="plugins/SharpSite.Plugins.Data.Postgres/SharpSite.Plugins.Data.Postgres.csproj" />
     <Project Path="plugins/SharpSite.Plugins.FileStorage.FileSystem/SharpSite.Plugins.FileStorage.FileSystem.csproj" />
+    <Project Path="plugins/SharpSite.Plugins.SharpShop/SharpSite.Plugins.SharpShop.csproj" />
   </Folder>
   <Folder Name="/src/">
     <Project Path="src/SharpSite.UI.Security/SharpSite.UI.Security.csproj" />

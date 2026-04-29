@@ -21,6 +21,10 @@ var pgSecurity = new RegisterPostgresSecurityServices();
 pgSecurity.RegisterServices(builder);
 #endregion
 
+// Load SharpShop ecommerce plugin
+var shopConfig = new SharpSite.Plugins.SharpShop.Configure();
+await shopConfig.AddServicesAtStartup(builder);
+
 // add the custom localization features for the application framework
 builder.ConfigureRequestLocalization();
 
@@ -83,7 +87,8 @@ var pluginManager = await app.ActivatePluginManager(appState);
 app.MapRazorComponents<App>()
 		.AddInteractiveServerRenderMode()
 		.AddAdditionalAssemblies(
-		typeof(SharpSite.Security.Postgres.PgSharpSiteUser).Assembly
+		typeof(SharpSite.Security.Postgres.PgSharpSiteUser).Assembly,
+		typeof(SharpSite.Plugins.SharpShop.Configure).Assembly
 		//typeof(Sample.FirstThemePlugin.Theme).Assembly
 		);
 
