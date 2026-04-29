@@ -8,13 +8,13 @@ namespace SharpSite.Tests.Plugins;
 public class ValidateManifest
 {
 	private readonly Mock<ILogger> _loggerMock;
-	private readonly Mock<Plugin> _pluginMock;
+	private readonly Mock<SharpSite.Plugins.Plugin> _pluginMock;
 	private const string _PluginName = "Test Plugin";
 
 	public ValidateManifest()
 	{
 		_loggerMock = new Mock<ILogger>();
-		_pluginMock = new Mock<Plugin>(new MemoryStream(), _PluginName);
+		_pluginMock = new Mock<SharpSite.Plugins.Plugin>(new MemoryStream(), _PluginName);
 	}
 
 	[Fact]

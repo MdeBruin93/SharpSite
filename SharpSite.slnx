@@ -1,0 +1,50 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/0. Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path=".github/copilot-instructions.md" />
+    <File Path=".gitignore" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="nuget.config" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/1. Abstractions/">
+    <Project Path="src/SharpSite.Abstractions.Base/SharpSite.Abstractions.Base.csproj" />
+    <Project Path="src/SharpSite.Abstractions.DataStorage/SharpSite.Abstractions.DataStorage.csproj" />
+    <Project Path="src/SharpSite.Abstractions.FileStorage/SharpSite.Abstractions.FileStorage.csproj" />
+    <Project Path="src/SharpSite.Abstractions.Theme/SharpSite.Abstractions.Theme.csproj" />
+    <Project Path="src/SharpSite.Abstractions/SharpSite.Abstractions.csproj" />
+  </Folder>
+  <Folder Name="/2. Tools/">
+    <Project Path="src/SharpSite.PluginPacker/SharpSite.PluginPacker.csproj" />
+  </Folder>
+  <Folder Name="/5. Source/">
+    <Project Path="src/SharpSite.AppHost/SharpSite.AppHost.csproj" />
+    <Project Path="src/SharpSite.Data.Postgres.Migration/SharpSite.Data.Postgres.Migration.csproj" />
+    <Project Path="src/SharpSite.Data.Postgres/SharpSite.Data.Postgres.csproj" />
+    <Project Path="src/SharpSite.Plugins/SharpSite.Plugins.csproj" />
+    <Project Path="src/SharpSite.Security.Postgres/SharpSite.Security.Postgres.csproj" />
+    <Project Path="src/SharpSite.ServiceDefaults/SharpSite.ServiceDefaults.csproj" />
+    <Project Path="src/SharpSite.Web/SharpSite.Web.csproj" />
+  </Folder>
+  <Folder Name="/7. Tests/">
+    <Project Path="tests/SharpSite.Tests.Plugins/SharpSite.Tests.Plugins.csproj" />
+    <Project Path="tests/SharpSite.Tests.Web/SharpSite.Tests.Web.csproj" />
+  </Folder>
+  <Folder Name="/8. End-to-End/">
+    <Project Path="e2e/SharpSite.E2E/SharpSite.E2E.csproj" />
+  </Folder>
+  <Folder Name="/9. Samples/">
+    <Project Path="plugins/Sample.FirstThemePlugin/Sample.FirstThemePlugin.csproj" />
+    <Project Path="plugins/SharpSite.Plugins.Data.Postgres/SharpSite.Plugins.Data.Postgres.csproj" />
+    <Project Path="plugins/SharpSite.Plugins.FileStorage.FileSystem/SharpSite.Plugins.FileStorage.FileSystem.csproj" />
+  </Folder>
+  <Folder Name="/src/">
+    <Project Path="src/SharpSite.UI.Security/SharpSite.UI.Security.csproj" />
+  </Folder>
+</Solution>

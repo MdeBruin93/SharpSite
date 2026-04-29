@@ -28,9 +28,9 @@ public class ConcurrentAccessTests
 		Features = [PluginFeatures.Theme]
 	};
 
-	private static Plugin CreateFakePlugin()
+	private static SharpSite.Plugins.Plugin CreateFakePlugin()
 	{
-		return new Plugin(new MemoryStream(new byte[] { 0x00 }), "fake.sspkg");
+		return new SharpSite.Plugins.Plugin(new MemoryStream(new byte[] { 0x00 }), "fake.sspkg");
 	}
 
 	[Fact]

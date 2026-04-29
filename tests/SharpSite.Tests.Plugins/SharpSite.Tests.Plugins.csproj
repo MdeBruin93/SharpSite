@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\SharpSite.Plugins\SharpSite.Plugins.csproj" />
+    <ProjectReference Include="..\..\plugins\SharpSite.Plugin.SharpShop\SharpSite.Plugin.SharpShop.csproj" />
   </ItemGroup>
 
 

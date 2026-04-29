@@ -7,7 +7,7 @@
 [![Test Results](https://fritzblog.blob.core.windows.net/githubartifacts/unittest-badge.svg?0.6)](https://fritzblog.blob.core.windows.net/githubartifacts/unittest-badge.svg)
 [![End-to-End Test Results](https://fritzblog.blob.core.windows.net/githubartifacts/playwright-badge.svg?0.6.1)](https://fritzblog.blob.core.windows.net/githubartifacts/playwright-badge.svg)
 
-A modern, accessible CMS built with .NET 9 and Blazor that combines the simplicity of traditional content management with the power of modern web development.
+A modern, accessible CMS built with .NET 10 and Blazor that combines the simplicity of traditional content management with the power of modern web development.
 
 ## Purpose
 
@@ -15,7 +15,7 @@ SharpSite aims to be a highly customizable content management system that adapts
 
 ## System Requirements
 
-- .NET 9 SDK
+- .NET 10 SDK
 - PostgreSQL 16 or later
 - Visual Studio 2022 or VS Code (recommended)
 - Docker or Podman container runtime

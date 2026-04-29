@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>SharpSite.Plugin.SharpShop</AssemblyName>
+    <RootNamespace>SharpSite.Plugin.SharpShop</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\SharpSite.Abstractions.Base\SharpSite.Abstractions.Base.csproj" />
+  </ItemGroup>
+
+</Project>

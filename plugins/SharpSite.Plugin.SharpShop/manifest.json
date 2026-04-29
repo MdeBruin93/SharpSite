@@ -1,0 +1,23 @@
+{
+    "id": "SharpSite.Plugin.SharpShop",
+    "displayName": "SharpShop",
+    "description": "Standalone ecommerce plugin bootstrap for catalog, cart, and order workflows.",
+    "version": "0.1.0",
+    "published": "2026-04-29",
+    "supportedVersions": "0.4.0",
+    "author": "Michael de Bruin",
+    "contact": "SharpSite Team",
+    "contactEmail": "noreply@example.com",
+    "authorWebsite": "https://github.com",
+    "knownLicense": "MIT",
+    "tags": [
+        "ecommerce",
+        "shop",
+        "catalog",
+        "cart",
+        "orders"
+    ],
+    "features": [
+        "DataStorage"
+    ]
+}
