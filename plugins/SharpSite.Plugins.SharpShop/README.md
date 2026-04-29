@@ -10,10 +10,13 @@ SharpShop is an initial standalone ecommerce plugin scaffold for SharpSite. This
   - `CartItem`
   - `Order`
   - `OrderItem`
-- In-memory repository interfaces and implementations:
-  - `ICatalogRepository` / `InMemoryCatalogRepository`
-  - `IShoppingCartRepository` / `InMemoryShoppingCartRepository`
-  - `IOrderRepository` / `InMemoryOrderRepository`
+- Repository interfaces with EF-backed runtime implementations:
+  - `ICatalogRepository` / `EfCatalogRepository`
+  - `IShoppingCartRepository` / `EfShoppingCartRepository`
+  - `IOrderRepository` / `EfOrderRepository`
+- Dedicated shop persistence layer:
+  - `ShopDbContext` with isolated `sharpshop` schema in the same PostgreSQL database
+  - Startup initializer that creates schema objects and seeds default catalog data
 - Application services:
   - `CatalogService`
   - `ShoppingCartService`
@@ -25,21 +28,21 @@ SharpShop is an initial standalone ecommerce plugin scaffold for SharpSite. This
 1. Build the plugin project:
 
 ```powershell
-dotnet build .\plugins\SharpSite.Plugin.SharpShop\SharpSite.Plugin.SharpShop.csproj
+dotnet build .\plugins\SharpSite.Plugins.SharpShop\SharpSite.Plugins.SharpShop.csproj
 ```
 
 2. Package and load through the standard SharpSite plugin packaging flow when ready.
 
 ## Current capabilities
 
-- Product and category read/write operations in memory.
+- Product and category read/write operations persisted through EF Core.
 - Cart add, update quantity, remove, clear.
-- Checkout flow that creates an in-memory order and clears the cart.
+- Checkout flow that persists orders and clears the cart.
 - Simple seeded demo catalog for local development.
 
 ## Limitations
 
-- No persistent storage provider yet (data resets on process restart).
+- No customer-facing storefront UI yet (service and persistence layer only).
 - No Razor UI or endpoint wiring in this bootstrap.
 - No taxes, shipping, discounts, payments, inventory reservation, or fulfillment pipeline.
 - No auth/ownership boundaries on cart and order access in this bootstrap.
@@ -54,7 +57,7 @@ The following host-level changes are intentionally not implemented in this task 
 
 ## Roadmap
 
-- Add pluggable storage provider abstraction backed by EF Core.
+- Add migrations and deployment-time database upgrade workflow for shop schema.
 - Add product search/filtering and richer catalog metadata.
 - Add checkout pipeline for tax, shipping, and payment providers.
 - Add admin CRUD UI for catalog management.

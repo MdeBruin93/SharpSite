@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using SharpSite.Abstractions.Base;
+using SharpSite.Plugins.SharpShop.Persistence;
 using SharpSite.Plugins.SharpShop.Repositories;
 using SharpSite.Plugins.SharpShop.Services;
 
@@ -14,9 +17,19 @@ public class Configure : IRunAtStartup
 {
     public Task<IHostApplicationBuilder> AddServicesAtStartup(IHostApplicationBuilder app)
     {
-        app.Services.AddSingleton<ICatalogRepository, InMemoryCatalogRepository>();
-        app.Services.AddSingleton<IShoppingCartRepository, InMemoryShoppingCartRepository>();
-        app.Services.AddSingleton<IOrderRepository, InMemoryOrderRepository>();
+        var connectionString = app.Configuration.GetConnectionString("SharpSite")
+            ?? app.Configuration.GetConnectionString("postgresdb")
+            ?? string.Empty;
+
+        app.Services.AddDbContext<ShopDbContext>(options =>
+            options.UseNpgsql(connectionString, dbOptions =>
+                dbOptions.MigrationsHistoryTable("__EFMigrationsHistory", "sharpshop")));
+
+        app.Services.AddHostedService<ShopDbInitializer>();
+
+        app.Services.AddScoped<ICatalogRepository, EfCatalogRepository>();
+        app.Services.AddScoped<IShoppingCartRepository, EfShoppingCartRepository>();
+        app.Services.AddScoped<IOrderRepository, EfOrderRepository>();
 
         app.Services.AddScoped<CatalogService>();
         app.Services.AddScoped<ShoppingCartService>();

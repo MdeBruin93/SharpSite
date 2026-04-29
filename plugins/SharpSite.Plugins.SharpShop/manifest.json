@@ -1,5 +1,5 @@
 {
-    "id": "SharpSite.Plugin.SharpShop",
+    "id": "SharpSite.Plugins.SharpShop",
     "displayName": "SharpShop",
     "description": "Standalone ecommerce plugin bootstrap for catalog, cart, and order workflows.",
     "version": "0.1.0",
