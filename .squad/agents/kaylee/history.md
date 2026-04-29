@@ -25,3 +25,11 @@ River completed the Security P0 Remote Code Execution vulnerability fix (#346). 
   - `tests/SharpSite.Tests.Plugins/ConcurrentAccessTests.cs` — Issue #348: 3 tests for concurrent PluginAssemblyManager AddAssembly/RemoveAssembly and read-while-write safety.
 - **Lambda discard gotcha**: Don't use `_ =` for discards inside lambdas where `_` is already the lambda parameter (causes CS0029). Use named locals instead.
 - **Central Package Management**: Test projects use `<PackageReference Include="..." />` without `Version` attribute; versions are in `Directory.Packages.props`.
+
+### 2026-04-29 - SharpShop Focused Unit Test Coverage Added
+- **Coverage shape**: Added deterministic, in-memory, no-I/O tests for SharpShop repositories and services under `tests/SharpSite.Tests.Plugins/SharpShop`.
+- **Repository tests added**: `InMemoryCatalogRepositoryTests`, `InMemoryShoppingCartRepositoryTests`, and `InMemoryOrderRepositoryTests` cover seeding, filters on `IsActive`, cart upsert/remove/clear semantics, case-insensitive lookups, and order sorting by `CreatedUtc` descending.
+- **Service tests added**: `CatalogServiceTests` validates delegation to `ICatalogRepository`; `ShoppingCartServiceTests` validates quantity merge behavior, inactive product rejection, quantity-zero removal, checkout empty-cart guard, order persistence callback, and cart clear after checkout.
+- **Project wiring learned**: `tests/SharpSite.Tests.Plugins/SharpSite.Tests.Plugins.csproj` needs a direct `ProjectReference` to `plugins/SharpSite.Plugin.SharpShop/SharpSite.Plugin.SharpShop.csproj` for plugin test compilation.
+- **Namespace collision gotcha**: Adding SharpShop introduced `SharpSite.Plugin` namespace ambiguity against `SharpSite.Plugins.Plugin`; existing tests required fully qualifying `SharpSite.Plugins.Plugin` in two files.
+- **Validation result**: `dotnet test .\\tests\\SharpSite.Tests.Plugins\\SharpSite.Tests.Plugins.csproj --filter "SharpSite.Tests.Plugins.SharpShop"` passed with 19/19 tests, 0 failures.

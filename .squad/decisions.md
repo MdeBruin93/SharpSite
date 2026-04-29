@@ -2,6 +2,43 @@
 
 ## Active Decisions
 
+### SharpShop Bootstrap Plugin Scope (2026-04-29) ✅ COMPLETED
+**Status:** Completed
+**Owner:** River
+**Requested by:** Michael de Bruin
+**Decision:** Bootstrap SharpShop as a self-contained plugin under `plugins/SharpSite.Plugin.SharpShop` using in-memory repositories and internal application services, without changes to `src/` host code or root solution/package management files.
+**Rationale:** Establish a compile-oriented ecommerce foundation with low blast radius while avoiding coupling to host extension points that do not yet provide dedicated ecommerce registration.
+**Implemented:**
+- New plugin project, manifest, and startup `Configure` class
+- Domain models: `Product`, `Category`, `CartItem`, `Order`, `OrderItem`
+- In-memory repositories for catalog, cart, and order data
+- Application services for catalog and shopping cart workflows
+- Plugin README with setup, capabilities, limitations, and roadmap
+**Deferred (requires explicit approval):**
+1. Host startup integration to invoke plugin `IRunAtStartup` services automatically
+2. Host route/component integration for storefront/cart/order endpoints and UI
+3. New core plugin contract additions for ecommerce registration abstractions
+
+### SharpShop Focused Unit Test Coverage (2026-04-29) ✅ COMPLETED
+**Status:** Completed
+**Owner:** Kaylee
+**Requested by:** Michael de Bruin
+**Decision:** Add deterministic, focused SharpShop unit tests under `tests/SharpSite.Tests.Plugins/SharpShop` and validate via targeted test execution.
+**Implemented:**
+- Added test files:
+  - `InMemoryCatalogRepositoryTests.cs`
+  - `InMemoryShoppingCartRepositoryTests.cs`
+  - `InMemoryOrderRepositoryTests.cs`
+  - `CatalogServiceTests.cs`
+  - `ShoppingCartServiceTests.cs`
+- Added `ProjectReference` from `tests/SharpSite.Tests.Plugins/SharpSite.Tests.Plugins.csproj` to `plugins/SharpSite.Plugin.SharpShop/SharpSite.Plugin.SharpShop.csproj`
+- Resolved namespace ambiguity by fully qualifying `SharpSite.Plugins.Plugin` in:
+  - `tests/SharpSite.Tests.Plugins/ConcurrentAccessTests.cs`
+  - `tests/SharpSite.Tests.Plugins/ValidateManifest.cs`
+**Validation:**
+- Ran: `dotnet test .\\tests\\SharpSite.Tests.Plugins\\SharpSite.Tests.Plugins.csproj --filter "SharpSite.Tests.Plugins.SharpShop"`
+- Result: Passed (19 total, 19 succeeded, 0 failed, 0 skipped)
+
 ### Security P0: Remove TypeNameHandling.Auto RCE Vector (2026-03-26) ✅ COMPLETED
 **Status:** Completed  
 **Owner:** River  

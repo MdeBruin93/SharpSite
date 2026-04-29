@@ -12,3 +12,7 @@ Scribe initialized. Team cast from Firefly universe on 2026-03-26.
 ## Learnings
 
 📌 Team initialized on 2026-03-26 — 9 agents + Scribe + Ralph
+
+### 2026-04-29 — SharpShop Batch Decision Merge and Log Convention
+- Merged SharpShop decision inbox entries into `.squad/decisions.md` and cleared processed inbox files.
+- For SharpShop build batches, keep one concise orchestration entry and one concise session log, then commit `.squad/` only.

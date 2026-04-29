@@ -97,3 +97,9 @@ Fixed remaining build error in `RegisterPostgresSecurityServices.cs:33`. The `Sh
 **Pattern to remember:** For plugin integrity, validate at two points: (1) the file hash before loading bytes into memory, and (2) the assembly metadata after loading. Store hashes on first install and verify on every subsequent load. At startup, catch validation failures per-plugin and `continue` to avoid one bad plugin blocking all others.
 
 **Cross-agent coordination:** Simon's #350 forced password reset is independent; no blocking dependencies.
+
+### 2026-04-29 — SharpShop Bootstrap Plugin Added as Self-Contained ECommerce Foundation
+
+Built a new standalone plugin at `plugins/SharpSite.Plugin.SharpShop` without changing `src/` or solution-level files. Added compile-oriented domain models (`Product`, `Category`, `CartItem`, `Order`, `OrderItem`), in-memory repositories, and application services (`CatalogService`, `ShoppingCartService`) with deterministic cart and checkout rules. Included `Configure : IRunAtStartup` for DI registration so host wiring can be enabled later.
+
+Key practical learning: current plugin host registration in SharpSite primarily maps services via `RegisterPluginAttribute` and known `PluginRegisterType` values. There is no dedicated ecommerce registration contract yet, so ecommerce runtime integration should be tracked as an explicit host-level approval item instead of coupling bootstrap plugin code to unsupported extension points.
